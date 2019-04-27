@@ -1,5 +1,6 @@
-package org.fundacionjala.calculator.pages;
+package org.fundacionjala.calculator;
 
+import org.fundacionjala.calculator.pages.HelloServlet;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
