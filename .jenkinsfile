@@ -14,12 +14,8 @@ pipeline {
       }
       stage('Deploy') {
           steps {
+              sh "gradle war"
               sh "gradle appRun"
-          }
-      }
-      stage('') {
-          steps {
-              
           }
       }
     }
@@ -27,11 +23,8 @@ pipeline {
         always {
             junit "**/target/surefire-reports"
         }
- //     unstable {
- //          archive "logs.log"
- //     }
         success {
-            archive "target/*.war"
+            archive "build/libs/*.war"
         }
     }
 }
