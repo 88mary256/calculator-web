@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+      stage('Build') {
+          steps {
+              sh "gradle wrapper --gradle-version=4.10-rc-2"
+              sh "gradle build"
+          }
+      }
+      stage('Test') {
+          steps {
+              sh "gradle test"
+          }
+      }
+      stage('Deploy') {
+          steps {
+              sh "gradle appRun"
+          }
+      }
+      stage('') {
+          steps {
+              
+          }
+      }
+    }
+    post {
+        always {
+            junit "**/target/surefire-reports"
+        }
+ //     unstable {
+ //          archive "logs.log"
+ //     }
+        success {
+            archive "target/*.war"
+        }
+    }
+}
