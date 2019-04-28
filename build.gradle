@@ -14,6 +14,7 @@ repositories {
 }
 
 gretty {
+    httpPort = 9000
     integrationTestTask = 'test'
 }
 

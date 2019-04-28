@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+      stage('Build') {
+          steps {
+              sh "gradle wrapper --gradle-version=4.10-rc-2"
+              sh "gradle build"
+          }
+      }
+      stage('Test') {
+          steps {
+              sh "gradle test"
+          }
+      }
+      stage('Deploy') {
+          steps {
+              sh "gradle war"
+              sh "gradle appRun"
+          }
+      }
+    }
+    post {
+        always {
+            publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: 'build/reports/tests/',
+                reportFiles: 'index.html',
+                reportName: 'Unit Test Report'
+            ]
+        }
+        success {
+            archive "build/libs/*.war"
+        }
+    }
+}
