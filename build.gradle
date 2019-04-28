@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'war'
     id 'org.gretty' version '2.2.0'
 }
@@ -13,13 +14,15 @@ repositories {
 }
 
 gretty {
-    integrationTestTask = 'test'  
+    integrationTestTask = 'test'
 }
 
+
 dependencies {
-    providedCompile 'javax.servlet:javax.servlet-api:3.1.0' 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.7.19'
-    testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1'
-    testCompile 'org.seleniumhq.selenium:selenium-java:3.3.1'
+    providedCompile group: 'javax.servlet', name:'javax.servlet-api', version:'3.1.0'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.mockito', name: 'mockito-core', version :'2.7.19'
+    testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '1.6.1'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.3.1'
 }

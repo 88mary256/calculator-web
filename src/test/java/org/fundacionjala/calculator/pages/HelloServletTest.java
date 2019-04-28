@@ -1,4 +1,4 @@
-package org.fundacionjala.calculator;
+package org.fundacionjala.calculator.pages;
 
 import org.fundacionjala.calculator.pages.HelloServlet;
 import org.junit.Before;
