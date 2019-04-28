@@ -21,7 +21,14 @@ pipeline {
     }
     post {
         always {
-            junit "build/reports/tests/index.html"
+            publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: 'build/reports/tests/',
+                reportFiles: 'index.html',
+                reportName: 'Unit Test Report'
+            ]
         }
         success {
             archive "build/libs/*.war"
