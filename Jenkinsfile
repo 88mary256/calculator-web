@@ -3,19 +3,22 @@ pipeline {
     stages {
       stage('Build') {
           steps {
-              sh "gradle wrapper --gradle-version=4.10-rc-2"
-              sh "gradle build"
+              sh "./gradlew build"
           }
       }
       stage('Test') {
           steps {
-              sh "gradle test"
+              sh "./gradlew test"
           }
       }
+      stage('Package') {
+          steps {
+              sh "./gradlew war"
+          }
+       }
       stage('Deploy') {
           steps {
-              sh "gradle war"
-              sh "gradle appRun"
+              sh "./gradlew appRun"
           }
       }
     }
@@ -31,7 +34,7 @@ pipeline {
             ]
         }
         success {
-            archive "build/libs/*.war"
+            archiveArtifacts "build/libs/*.war"
         }
     }
 }
