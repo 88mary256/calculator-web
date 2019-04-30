@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'war'
     id 'org.gretty' version '2.2.0'
+    id 'org.sonarqube' version '2.7'
 }
 
 group '88mary256'
@@ -27,19 +28,4 @@ dependencies {
     testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.3.0'
     testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 }
-
-buildscript {
-  repositories {
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-  }
-  dependencies {
-    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
-  }
-}
-
-apply plugin: "org.sonarqube"
-
-
 
