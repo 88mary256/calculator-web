@@ -23,16 +23,10 @@ pipeline {
       }
       stage('Test') {
           steps {
-              sh "./gradlew test"
               sh 'touch build/test-results/*.xml'
               junit 'build/test-results/*.xml'
           }
       }
-      stage('Package') {
-          steps {
-              sh "./gradlew war"
-          }
-       }
       stage('Deploy') {
           steps {
               sh "./gradlew appRun"
