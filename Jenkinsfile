@@ -23,8 +23,7 @@ pipeline {
       }
       stage('Test') {
           steps {
-              sh 'touch build/test-results/*.xml'
-              junit 'build/test-results/*.xml'
+              echo 'Unit Test already executed in Build stage'
           }
       }
       stage('Deploy') {
@@ -34,6 +33,16 @@ pipeline {
       }
     }
     post {
+        always {
+            publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: 'build/reports/tests/',
+                reportFiles: 'index.html',
+                reportName: 'Unit Test Report'
+            ]
+        }
         success {
             archiveArtifacts "build/libs/*.war"
         }
