@@ -5,6 +5,8 @@ pipeline {
     stages {
       stage('Build') {
           steps {
+              sh "pwd"
+              sh "ls -la ./**"
               sh "./gradlew build"
           }
       }
@@ -29,8 +31,6 @@ pipeline {
        }
       stage('Deploy') {
           steps {
-              sh "pwd"
-              sh "ls -la ./**"
               sh "./gradlew appRun"
           }
       }
