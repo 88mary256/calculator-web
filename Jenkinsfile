@@ -29,23 +29,10 @@ pipeline {
        }
       stage('Deploy') {
           steps {
+              sh "pwd"
+              sh "ls -la ./**"
               sh "./gradlew appRun"
           }
       }
-    }
-    post {
-        always {
-            publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: 'data/build/reports/tests/',
-                reportFiles: 'index.html',
-                reportName: 'Unit Test Report'
-            ]
-        }
-        success {
-            archiveArtifacts "data/build/libs/*.war"
-        }
     }
 }
