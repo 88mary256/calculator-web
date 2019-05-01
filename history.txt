@@ -1,0 +1,343 @@
+    1  sudo docker logs
+    2  docker images
+    3  echo $USER
+    4  sudo apt-get update
+    5  sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
+    6  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    7  sudo apt-key fingerprint 0EBFCD88
+    8  sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    9     $(lsb_release -cs) \
+   10     stable"
+   11  sudo apt-get update
+   12  sudo apt-get install docker-ce docker-ce-cli containerd.io
+   13  sudo docker run hello-world
+   14  sudo apt-get git
+   15  sudo apt-get install git-core
+   16  git config --global --list
+   17  vim /home/ubuntu/.gitconfig
+   18  git config --global --list
+   19  sudo apt-get install meld
+   20  sudo apt install dconf-editor
+   21  cd 
+   22  cd Documents/docker1
+   23  vim Dockerfile
+   24  cd ../docker2
+   25  vim Dockerfile
+   26  cd ..
+   27  mkdir repositories
+   28  cd repositories/
+   29  git clone https://github.com/awt02-2019/class.git
+   30  pwd
+   31  ll
+   32  cd class
+   33  ll
+   34  git branch t1_marines
+   35  git branch
+   36  git checkout t1_marines
+   37  git branch
+   38  git push
+   39  git push --set-upstream origin t1_marines
+   40  git status
+   41  git add what\ is\ docker.txt 
+   42  git status
+   43  git commit /m "Added what is docker information"
+   44  git commit -m "Added what is docker information"
+   45  git status
+   46  git branch
+   47  git push --set-upstream origin t1_marines
+   48  uname /a
+   49  uname -a
+   50  cat /etc/os-release 
+   51  docker ps -a
+   52  sudo docker ps -a
+   53  docker info
+   54  sudo docker info
+   55  docker version
+   56  sudo docker version
+   57  sudo docker run hello-world
+   58  sudo docker ps -a
+   59  sudo docker pull alpine
+   60  sudo docker images ls
+   61  sudo docker images 
+   62  sudo docker image ls
+   63  sudo docker run alpine -ls -l
+   64  sudo docker run alpine ls -l
+   65  sudo docker run alpine ls -lt
+   66  sudo docker run alpine ls -la
+   67  help docker alphine
+   68  help docker alpine
+   69  man /k alpine
+   70  man -k alpine
+   71  man ls
+   72  sudo docker run alpine eco "hello mary"
+   73  sudo docker run alpine echo "hello mary"
+   74  sudo docker ps -a
+   75  git status
+   76  git add marines what\ is\ docker.txt 
+   77  git status
+   78  git commit -m "Moved files to marines folder"
+   79  git push
+   80  cd marines/docker2
+   81  docker build -t awt02:1.1 .
+   82  sudo docker build -t awt02:1.1 .
+   83  cat /etc/passwd
+   84  cat /etc/group
+   85  sudo usermod -aG docker ubuntu
+   86  sudo usermod -ag docker ubuntu
+   87  cat /etc/group
+   88  exit
+   89  cd ..
+   90  cd docker1
+   91  sudo docker build -t progress:1.1 .
+   92  sudo docker ps -a
+   93  git status
+   94  git add Screenshot\ at\ 2019-04-23\ 19\:47\:48.png 
+   95  git status
+   96  git commit -m "Added screenshot"
+   97  git push
+   98  cd ..
+   99  git branch
+  100  git status
+  101  git checkout develop
+  102  git status
+  103  git branch class_marines_notes
+  104  git add marines/docker2/Dockerfile 
+  105  git status
+  106  git commit -m "Added docker file for ubuntu."
+  107  git push
+  108  git checkout develop
+  109  git branch 
+  110  git branch t2_marines
+  111  git checkout t2_marines
+  112  git branch 
+  113  git status
+  114  git log
+  115  git checkout develop
+  116  git push origin develop:class_marines_notes
+  117  git checkout t2_marines
+  118  cd docker3
+  119  cd marines/docker3
+  120  git status
+  121  git add .
+  122  git status
+  123  docker build -t marines_project .
+  124  sudo docker build -t marines_project .
+  125  docker images
+  126  sudo docker images
+  127  git status
+  128  git branch
+  129  git commit -m "Added docker file for calculator project"
+  130  git push
+  131  git push --set-upstream origin t2_marines 
+  132  git status
+  133  git diff
+  134  git add .
+  135  git commit -m "Added git and repository"
+  136  git push
+  137  git status
+  138  git add .
+  139  git status
+  140  git commit -m "added screenshot"
+  141  git push
+  142  sudo docker images
+  143  sudo docker images sudo docker run marines_project
+  144  sudo docker run marines_project
+  145  exit
+  146  docker images
+  147  exit
+  148  ssh-keygen
+  149  cat .ssh/id_rsa.pub 
+  150  java -version
+  151  sudo find /var/log -name *.log
+  152  whoiam
+  153  whoami
+  154  sudo ufw allow 8080
+  155  sudo ufw status
+  156  sudo ufw start
+  157  sudo ufw status
+  158  sudo su
+  159  sudo apt update
+  160  sudo apt install openjdk-8-jdk
+  161  wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+  162  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+  163  sudo apt update
+  164  sudo apt install jenkins
+  165  systemctl status jenkins
+  166  systemctl stop jenkins
+  167  systemctl status jenkins
+  168  systemctl start jenkins
+  169  systemctl status jenkins
+  170  systemctl stop jenkins
+  171  systemctl status jenkins
+  172  systemctl start jenkins
+  173  systemctl status jenkins
+  174  systemctl restart jenkins
+  175  sudo su ubuntu
+  176  sudo su ubuntu passwd
+  177  sudo su ubuntu paswrd
+  178  sudo su ubuntu passwd
+  179  sudo su ubuntu password
+  180  sudo su ubuntu passwd
+  181  sudo su
+  182  cat /etc/sudoers
+  183  sudo cat /etc/sudoers
+  184  sudo su
+  185  systemctl restart jenkins
+  186  sudo cat /etc/sudoers
+  187  cat /etc/group
+  188  cd Documents/repositories/class/marines/
+  189  cd ..
+  190  git clone https://github.com/88mary256/calculator-web.git
+  191  git status
+  192  cd calculator-web/
+  193  git status
+  194  git add README.md 
+  195  git commit -m "Updated readme file"
+  196  git push
+  197  cd ..
+  198  git clone https://github.com/vcarmen/myExample.git
+  199  sudo su
+  200  cd Documents/repositories/class/
+  201  git status
+  202  git checkout what\ is\ docker.txt
+  203  ll
+  204  cd marines/
+  205  ll
+  206  git checkout develop
+  207  git pull
+  208  git branch; git status
+  209  ll
+  210  cd marines/
+  211  ll
+  212  git checkout what\ is\ docker.txt
+  213  git branch; git status
+  214  git diff
+  215  git status
+  216  sudo snap install intellij-idea-ultimate --classic
+  217  rebot
+  218  reboot
+  219  sudo reboot
+  220  intellij-idea-ultimate
+  221  where is intellijidea
+  222  whereis intellijidea
+  223  sudo su
+  224  sudo snap install intellij-idea-ultimate --classic
+  225  snap help refresh
+  226  cd /usr/bin
+  227  ll
+  228  intellij-idea-ultimate
+  229  sudo intellij-idea-ultimate
+  230  history
+  231  cd calculator-web/
+  232  git branch
+  233  git status
+  234  git checkout -b functional_test
+  235  git status
+  236  git add build.gradle src/main/java/org/fundacionjala/calculator/pages/HelloServlet.java 
+  237  git add build.gradle src/test/java/org/fundacionjala/calculator/HelloServletTest.java 
+  238  git add build.gradle src/test/java/org/fundacionjala/calculator/HelloServletFunctionalTest.java 
+  239  git status
+  240  git commit -m "Added basic functional test"
+  241  git push
+  242  http://localhost:8080/calculatorweb
+  243  git push --set-upstream origin functional_test
+  244  which gradle
+  245  sudo apt-get install gradle
+  246  cd Documents/repositories/
+  247  ll
+  248  ls
+  249  git pull
+  250  cd calculator-web/
+  251  git pull
+  252  git branch
+  253  git pull develop
+  254  git pull origin develop
+  255  git branch
+  256  git checkout develop
+  257  git branch
+  258  git status
+  259  gradle build
+  260  git status
+  261  gradle build
+  262  gradle build //stacktrace
+  263  gradle build --stacktrace  --debug
+  264  cd ..
+  265  xdg-open .
+  266  sudo xdg-open .
+  267  cd ..
+  268  cd class
+  269  git clone https://github.com/awt02-2019/class.git
+  270  git branch
+  271  cd class/
+  272  git branch
+  273  git pull origin marines
+  274  git checkout -b t3_marines
+  275  git status
+  276  git add marines/jenkins/
+  277  git status
+  278  git commit -m "Added gradle configuration and jenkinsfile(pipeline script)"
+  279  git push
+  280  git push --set-upstream origin t3_marines
+  281  cd Documents/
+  282  ll
+  283  cd repositories/
+  284  ll
+  285  cd calculator-web/
+  286  git branch
+  287  git checkout develop
+  288  git branch
+  289  git status
+  290  git pull
+  291  gradle wrapper --gradle-version=4.10-rc-2
+  292  gradle build
+  293  git branch
+  294  git status
+  295  git add .
+  296  git checkout -b pipeline
+  297  git status
+  298  git branch
+  299  git status
+  300  git add src
+  301  git status
+  302  git commit -m "Added pipeline"
+  303  git push --upstream
+  304  git push 
+  305  git push --set-upstream origin pipeline
+  306  git config credential.helper store
+  307  git status
+  308  git diff
+  309  git add .jenkinsfile 
+  310  git commit -m "Removed blanck lines"
+  311  git push
+  312  git branch
+  313  git status
+  314  git add build.gradle 
+  315  git commit -m "Added gretty port"
+  316  git push
+  317  gradle wrapper --gradle-version=4.10-rc-2
+  318  gradle build
+  319  gradle test
+  320  gradle war
+  321  git diff
+  322  git add . 
+  323  git status
+  324  git commit -m "minor change"
+  325  git push
+  326  git diff; git add .; git status
+  327  git commit -m "minor change"
+  328  git push
+  329  git status
+  330  sudo iptables /F
+  331  sudo iptables -F
+  332  sudo iptables -A INPUT -p tcp --DPORT 8080 -J accept
+  333  sudo iptables -A INPUT -p tcp --dport 8080 -J accept
+  334  sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+  335  sudo iptables -A INPUT -p tcp --dport 9000 -j ACCEPT
+  336  sudo iptables -F
+  337  cd /var/lib/jenkins/workspace/task3-pipeline-webproject
+  338  ls -la build/**
+  339  sudo su jenkins
+  340  reboot
+  341  sudo reboot
+  342  history
+  343  history > history.txt
