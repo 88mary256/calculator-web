@@ -34,16 +34,6 @@ pipeline {
       }
     }
     post {
-        always {
-            publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: 'build/reports/tests/',
-                reportFiles: 'index.html',
-                reportName: 'Unit Test Report'
-            ]
-        }
         success {
             archiveArtifacts "build/libs/*.war"
         }
