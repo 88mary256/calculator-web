@@ -24,6 +24,8 @@ pipeline {
       stage('Test') {
           steps {
               sh "./gradlew test"
+              sh 'touch build/test-results/*.xml'
+              junit 'build/test-results/*.xml'
           }
       }
       stage('Package') {
@@ -36,5 +38,20 @@ pipeline {
               sh "./gradlew appRun"
           }
       }
+    }
+    post {
+        always {
+            publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: 'build/reports/tests/',
+                reportFiles: 'index.html',
+                reportName: 'Unit Test Report'
+            ]
+        }
+        success {
+            archiveArtifacts "build/libs/*.war"
+        }
     }
 }
