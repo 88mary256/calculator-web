@@ -6,6 +6,8 @@ COPY . /data/
 RUN echo "copied all files"
 RUN pwd
 RUN ls
+RUN cd /data
+RUN ls -la **
 USER root
 RUN apt-get install -y sudo
 ADD . /usr/local/
