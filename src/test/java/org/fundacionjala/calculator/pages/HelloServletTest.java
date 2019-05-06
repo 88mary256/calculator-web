@@ -27,7 +27,10 @@ public class HelloServletTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    /** Test to verify get method. **/
+    /**
+     * Test to verify get method.
+     * @throws Exception exception.
+     **/
     @Test
     public void doGet() throws Exception {
         final StringWriter stringWriter = new StringWriter();
@@ -40,7 +43,10 @@ public class HelloServletTest {
         assertEquals("Hello, World!", stringWriter.toString());
     }
 
-    /** Test to verify post method. **/
+    /**
+     * Test to verify post method.
+     * @throws Exception exception.
+     **/
     @Test
     public void doPostWithoutName() throws Exception {
         when(this.request.getRequestDispatcher("response.jsp"))
@@ -52,7 +58,11 @@ public class HelloServletTest {
         verify(this.requestDispatcher).forward(this.request, this.response);
     }
 
-    /** Test to verify post method. **/
+    /**
+     * Test to verify post method.
+     *
+     * @throws Exception exception.
+     */
     @Test
     public void doPostWithName() throws Exception {
         when(this.request.getParameter("name")).thenReturn("Dolly");
