@@ -1,10 +1,14 @@
 pipeline {
     agent {
-        dockerfile true
+        dockerfile {
+            args '--entrypoint=\'\''
+        }
     }
     stages {
       stage('Build') {
           steps {
+              sh "pwd"
+              sh "ls -la ./**"
               sh "./gradlew build"
           }
       }
@@ -19,14 +23,9 @@ pipeline {
       }
       stage('Test') {
           steps {
-              sh "./gradlew test"
+              echo 'Unit Test already executed in Build stage'
           }
       }
-      stage('Package') {
-          steps {
-              sh "./gradlew war"
-          }
-       }
       stage('Deploy') {
           steps {
               sh "./gradlew appRun"
