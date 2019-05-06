@@ -9,21 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
+/** This class have the servlet for calculate page. **/
 @WebServlet(
         name = "calculateservlet",
         urlPatterns = "/calculate"
 )
 public class HomePage extends HttpServlet {
+
+    /**
+     * Post method for /calculate path.
+     * @param request HttpServletRequest.
+     * @param response HttpServletResponse.
+     * @throws ServletException exception.
+     * @throws IOException exception.
+     */
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String text = req.getParameter("text");
+    protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
+            throws ServletException, IOException {
+        final String text = request.getParameter("text");
 
-        double result = CalculatorUtils.calculate(text);
+        final double result = CalculatorUtils.calculate(text);
 
-        req.setAttribute("result", result);
-        RequestDispatcher view = req.getRequestDispatcher("index.jsp");
-        view.forward(req, resp);
+        request.setAttribute("result", result);
+        final RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+        view.forward(request, response);
     }
 }

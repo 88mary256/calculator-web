@@ -7,17 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/** This class have the servlet for hello page. **/
 @WebServlet(name = "HelloServlet", urlPatterns = {"hello"}, loadOnStartup = 1)
 public class HelloServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+
+    /**
+     * Get method for /hello path.
+     * @param request HttpServletRequest.
+     * @param response HttpServletResponse.
+     * @throws ServletException exception.
+     * @throws IOException exception.
+     */
+    @Override
+    public void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         response.getWriter().print("Hello, World!");
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Post method for /hello path.
+     * @param request HttpServletRequest.
+     * @param response HttpServletResponse.
+     * @throws ServletException exception.
+     * @throws IOException exception.
+     */
+    @Override
+    public void doPost(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        if (name == null) name = "World";
+        if (name == null) {
+            name = "World";
+        }
         request.setAttribute("user", name);
         request.getRequestDispatcher("response.jsp").forward(request, response);
     }
