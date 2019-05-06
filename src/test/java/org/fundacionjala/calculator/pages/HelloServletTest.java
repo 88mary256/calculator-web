@@ -1,6 +1,5 @@
 package org.fundacionjala.calculator.pages;
 
-import org.fundacionjala.calculator.pages.HelloServlet;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -13,50 +12,56 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+/** This class contains unit test for HelloServlet .**/
 public class HelloServletTest {
     @Mock private HttpServletRequest request;
     @Mock private HttpServletResponse response;
     @Mock private RequestDispatcher requestDispatcher;
 
+    /** Before hook. **/
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
     }
 
+    /** Test to verify get method. **/
     @Test
     public void doGet() throws Exception {
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter printWriter = new PrintWriter(stringWriter);
+        final StringWriter stringWriter = new StringWriter();
+        final PrintWriter printWriter = new PrintWriter(stringWriter);
 
-        when(response.getWriter()).thenReturn(printWriter);
+        when(this.response.getWriter()).thenReturn(printWriter);
 
-        new HelloServlet().doGet(request, response);
+        new HelloServlet().doGet(this.request, this.response);
 
         assertEquals("Hello, World!", stringWriter.toString());
     }
 
+    /** Test to verify post method. **/
     @Test
     public void doPostWithoutName() throws Exception {
-        when(request.getRequestDispatcher("response.jsp"))
-            .thenReturn(requestDispatcher);
+        when(this.request.getRequestDispatcher("response.jsp"))
+            .thenReturn(this.requestDispatcher);
 
-        new HelloServlet().doPost(request, response);
+        new HelloServlet().doPost(this.request, this.response);
 
-        verify(request).setAttribute("user", "World");
-        verify(requestDispatcher).forward(request,response);
+        verify(this.request).setAttribute("user", "World");
+        verify(this.requestDispatcher).forward(this.request, this.response);
     }
 
+    /** Test to verify post method. **/
     @Test
     public void doPostWithName() throws Exception {
-        when(request.getParameter("name")).thenReturn("Dolly");
-        when(request.getRequestDispatcher("response.jsp"))
-            .thenReturn(requestDispatcher);
+        when(this.request.getParameter("name")).thenReturn("Dolly");
+        when(this.request.getRequestDispatcher("response.jsp"))
+            .thenReturn(this.requestDispatcher);
 
-        new HelloServlet().doPost(request, response);
+        new HelloServlet().doPost(this.request, this.response);
 
-        verify(request).setAttribute("user", "Dolly");
-        verify(requestDispatcher).forward(request,response);
+        verify(this.request).setAttribute("user", "Dolly");
+        verify(this.requestDispatcher).forward(this.request, this.response);
     }
 }
