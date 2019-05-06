@@ -43,7 +43,8 @@ pipeline {
         }
         stage('Deploy') {
           steps {
-              sh "docker run -it --rm -p 8888:8080 tomcat:8.0"
+              sh "docker build -t tomcat_for_gui_tests:1.1 -f DockerfileProd ."
+              sh "docker run -it --rm -p 8888:8080 tomcat_for_gui_tests:1.1"
           }
         }
         stage('GUI tests') {
