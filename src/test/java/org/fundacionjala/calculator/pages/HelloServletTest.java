@@ -21,7 +21,10 @@ public class HelloServletTest {
     @Mock private HttpServletResponse response;
     @Mock private RequestDispatcher requestDispatcher;
 
-    /** Before hook. **/
+    /**
+     * Before hook.
+     * @throws Exception exception.
+     **/
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
