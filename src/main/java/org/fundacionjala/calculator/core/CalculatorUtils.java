@@ -13,7 +13,7 @@ public final class CalculatorUtils {
 
     public static double calculate(final String text) {
         // parse command and generate value
-        // example text = '1+23'
+        // example text = '1 + 23'
         // return 24
         return 1;
     }
@@ -23,9 +23,9 @@ public final class CalculatorUtils {
      * This method sum a with b.
      * @param a number
      * @param b number
-     * @return a+b
+     * @return a + b
      */
     public static double add(final double  a, final double b) {
-        return a+ b;
+        return a + b;
     }
 }
