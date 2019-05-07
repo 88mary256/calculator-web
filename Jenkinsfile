@@ -49,7 +49,11 @@ pipeline {
         }
         stage('GUI tests') {
             steps {
+                sh "pwd"
+                sh "rm -r helloPage-selenium-tests"
                 sh "git clone https://github.com/88mary256/helloPage-selenium-tests.git"
+                sh "pwd"
+                sh "ls"
                 sh "./gradlew executeFeatures"
             }
         }
