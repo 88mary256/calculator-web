@@ -1,5 +1,5 @@
-FROM gradle
-RUN echo "Java with gradle image started"
+FROM frekele/ant
+RUN echo "Java with and image started"
 
 RUN mkdir /data
 COPY . /data/
