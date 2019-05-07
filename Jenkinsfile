@@ -55,7 +55,7 @@ pipeline {
                 sh "git checkout master"
                 sh "pwd"
                 sh "ls"
-                sh "gradle executeFeatures"
+                sh "cd ./helloPage-selenium-tests; gradle executeFeatures"
             }
         }
     }
