@@ -15,7 +15,7 @@ pipeline {
                       sh "./gradlew build"
                     }
                   }
-                  /* stage('Validate code quality') {
+                   stage('Validate code quality') {
                       steps {
                           sh "./gradlew sonarqube \
                           -Dsonar.projectKey=88mary256_calculator-web \
@@ -23,7 +23,7 @@ pipeline {
                           -Dsonar.host.url=https://sonarcloud.io \
                           -Dsonar.login=0cff712fd948d82dd64bcb5c0ffa840c75a47f31"
                     }
-                  } */
+                  } 
             }
             post {
                 always {
