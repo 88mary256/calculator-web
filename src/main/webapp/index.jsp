@@ -11,8 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  <h1>Calculator</h1>
-  This is a fucking test
+  <h1>Hello Page</h1>
 
   <p>Say <a href="hello">Hello</a></p>
 
