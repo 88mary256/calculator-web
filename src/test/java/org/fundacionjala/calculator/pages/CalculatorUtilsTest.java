@@ -11,6 +11,7 @@ public class CalculatorUtilsTest {
     /** Test to verify add method. **/
     @Test
     public void testAdd() {
-        assertEquals(CalculatorUtils.add(1,2),3.0);
+        final double expectedResult = 3.0;
+        assertEquals(CalculatorUtils.add(1, 2), expectedResult);
     }
 }
