@@ -8,13 +8,24 @@ public final class CalculatorUtils {
     }
     /**
      * This method calculate operations in text.
-     * @param text string.
-     * @return double.
-     **/
+     * param text string.
+     * return double.
+
     public static double calculate(final String text) {
         // parse command and generate value
         // example text = '1+23'
         // return 24
         return 1;
+    }
+    **/
+
+    /**
+     * This method sum a with b.
+     * @param a number
+     * @param b number
+     * @return a+b
+     */
+    public static double add(final double  a, final double b) {
+        return a+ b;
     }
 }
