@@ -12,12 +12,12 @@ pipeline {
                     steps {
                       sh "pwd"
                       sh "ls -la ./**"
-                      sh "./gradlew build"
+                      sh "gradle build"
                     }
                   }
                   /* stage('Validate code quality') {
                       steps {
-                          sh "./gradlew sonarqube \
+                          sh "gradle sonarqube \
                           -Dsonar.projectKey=88mary256_calculator-web \
                           -Dsonar.organization=88mary256-github \
                           -Dsonar.host.url=https://sonarcloud.io \
@@ -43,6 +43,7 @@ pipeline {
         }
         stage('Deploy') {
           steps {
+              sh "gradle appRun"
               sh "docker build -t tomcat_for_gui_tests:1.1 -f DockerfileProd ."
               sh "docker run --rm -d -p 8888:8080 tomcat_for_gui_tests:1.1"
           }
@@ -50,7 +51,7 @@ pipeline {
         stage('GUI tests') {
             steps {
                 sh "git clone https://github.com/88mary256/helloPage-selenium-tests.git"
-                sh "./gradlew executeFeatures"
+                sh "gradle executeFeatures"
             }
         }
     }
