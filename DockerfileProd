@@ -2,5 +2,5 @@ FROM tomcat
 RUN echo "linux with java and tomcat"
 RUN pwd
 
-COPY ./build/libs/helloPage-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
+COPY ./build/libs/helloPage-1.0.1.war /usr/local/tomcat/webapps/
 CMD ["catalina.sh", "run"]
