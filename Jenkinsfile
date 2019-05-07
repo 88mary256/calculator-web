@@ -55,7 +55,7 @@ pipeline {
                 sh "git checkout master"
                 sh "pwd"
                 sh "ls"
-                sh "./gradlew executeFeatures"
+                sh "gradle executeFeatures"
             }
         }
     }
