@@ -52,6 +52,7 @@ pipeline {
                 sh "pwd"
                 sh "rm -r helloPage-selenium-tests"
                 sh "git clone https://github.com/88mary256/helloPage-selenium-tests.git"
+                sh "git checkout master"
                 sh "pwd"
                 sh "ls"
                 sh "./gradlew executeFeatures"
