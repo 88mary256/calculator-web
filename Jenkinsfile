@@ -60,8 +60,8 @@ pipeline {
     }
     post {
         always{
+            sh "docker stop \$(docker ps -a -q --filter ancestor=tomcat_for_gui_tests:1.1 --format='{{.ID}}')"
             sh 'docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi'
-            sh "docker stop $(docker ps -a -q --filter ancestor=tomcat_for_gui_tests:1.1 --format='{{.ID}}')"
         }
     }
 }
